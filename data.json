@@ -1,0 +1,420 @@
+[
+{
+    "model": "MChat.thread",
+    "pk": 1,
+    "fields": {
+        "first_person": 1,
+        "second_person": 2,
+        "timestamp": "2022-09-19T02:54:39.695Z"
+    }
+},
+{
+    "model": "MChat.thread",
+    "pk": 2,
+    "fields": {
+        "first_person": 1,
+        "second_person": 3,
+        "timestamp": "2022-09-19T02:55:34.332Z"
+    }
+},
+{
+    "model": "MChat.thread",
+    "pk": 3,
+    "fields": {
+        "first_person": 2,
+        "second_person": 1,
+        "timestamp": "2022-09-19T03:55:00.953Z"
+    }
+},
+{
+    "model": "MChat.chatmessage",
+    "pk": 1,
+    "fields": {
+        "thread": 1,
+        "user": 1,
+        "message": "hello",
+        "timestamp": "2022-09-19T02:59:06.864Z",
+        "posted_on": "2022-09-19T04:14:10.713Z"
+    }
+},
+{
+    "model": "MChat.chatmessage",
+    "pk": 2,
+    "fields": {
+        "thread": 1,
+        "user": 1,
+        "message": "k gardai xau?",
+        "timestamp": "2022-09-19T03:02:02.088Z",
+        "posted_on": "2022-09-19T04:14:10.713Z"
+    }
+},
+{
+    "model": "MChat.chatmessage",
+    "pk": 3,
+    "fields": {
+        "thread": 1,
+        "user": 1,
+        "message": "kina naboleko",
+        "timestamp": "2022-09-19T03:08:06.136Z",
+        "posted_on": "2022-09-19T04:14:10.713Z"
+    }
+},
+{
+    "model": "MChat.chatmessage",
+    "pk": 4,
+    "fields": {
+        "thread": 1,
+        "user": 1,
+        "message": "khana khayau?",
+        "timestamp": "2022-09-19T03:08:34.414Z",
+        "posted_on": "2022-09-19T04:14:10.713Z"
+    }
+},
+{
+    "model": "MChat.chatmessage",
+    "pk": 5,
+    "fields": {
+        "thread": 2,
+        "user": 1,
+        "message": "lol",
+        "timestamp": "2022-09-19T03:31:16.790Z",
+        "posted_on": "2022-09-19T04:14:10.713Z"
+    }
+},
+{
+    "model": "MChat.chatmessage",
+    "pk": 6,
+    "fields": {
+        "thread": 3,
+        "user": 1,
+        "message": "ssdfs",
+        "timestamp": "2022-09-19T03:55:09.780Z",
+        "posted_on": "2022-09-19T04:14:10.713Z"
+    }
+},
+{
+    "model": "MChat.chatmessage",
+    "pk": 7,
+    "fields": {
+        "thread": 3,
+        "user": 1,
+        "message": "huh",
+        "timestamp": "2022-09-19T03:55:16.861Z",
+        "posted_on": "2022-09-19T04:14:10.713Z"
+    }
+},
+{
+    "model": "MChat.chatmessage",
+    "pk": 8,
+    "fields": {
+        "thread": 3,
+        "user": 1,
+        "message": "k gradai xau",
+        "timestamp": "2022-09-19T03:56:29.120Z",
+        "posted_on": "2022-09-19T04:14:10.713Z"
+    }
+},
+{
+    "model": "MChat.chatmessage",
+    "pk": 9,
+    "fields": {
+        "thread": 2,
+        "user": 1,
+        "message": "kaam garexa",
+        "timestamp": "2022-09-19T04:01:55.779Z",
+        "posted_on": "2022-09-19T04:14:10.713Z"
+    }
+},
+{
+    "model": "MChat.chatmessage",
+    "pk": 10,
+    "fields": {
+        "thread": 2,
+        "user": 1,
+        "message": "umm",
+        "timestamp": "2022-09-19T04:15:49.068Z",
+        "posted_on": "2022-09-19T04:15:49.067Z"
+    }
+},
+{
+    "model": "MChat.chatmessage",
+    "pk": 11,
+    "fields": {
+        "thread": 1,
+        "user": 1,
+        "message": "kasto lamo jasto",
+        "timestamp": "2022-09-19T04:17:07.584Z",
+        "posted_on": "2022-09-19T04:17:07.583Z"
+    }
+},
+{
+    "model": "MChat.chatmessage",
+    "pk": 12,
+    "fields": {
+        "thread": 2,
+        "user": 1,
+        "message": "hello ",
+        "timestamp": "2022-09-19T04:21:03.732Z",
+        "posted_on": "2022-09-19T04:21:03.731Z"
+    }
+},
+{
+    "model": "MChat.chatmessage",
+    "pk": 13,
+    "fields": {
+        "thread": 1,
+        "user": 1,
+        "message": "aba ta milxa",
+        "timestamp": "2022-09-19T04:55:46.200Z",
+        "posted_on": "2022-09-19T04:55:46.200Z"
+    }
+},
+{
+    "model": "MChat.chatmessage",
+    "pk": 14,
+    "fields": {
+        "thread": 2,
+        "user": 1,
+        "message": "kam garyo",
+        "timestamp": "2022-09-19T05:00:38.015Z",
+        "posted_on": "2022-09-19T05:00:38.015Z"
+    }
+},
+{
+    "model": "MChat.chatmessage",
+    "pk": 15,
+    "fields": {
+        "thread": 1,
+        "user": 1,
+        "message": "milyo",
+        "timestamp": "2022-09-19T05:03:49.219Z",
+        "posted_on": "2022-09-19T05:03:49.218Z"
+    }
+},
+{
+    "model": "MChat.chatmessage",
+    "pk": 16,
+    "fields": {
+        "thread": 1,
+        "user": 1,
+        "message": "milyo",
+        "timestamp": "2022-09-19T05:03:58.893Z",
+        "posted_on": "2022-09-19T05:03:58.892Z"
+    }
+},
+{
+    "model": "MChat.chatmessage",
+    "pk": 17,
+    "fields": {
+        "thread": 1,
+        "user": 1,
+        "message": "yess",
+        "timestamp": "2022-09-19T05:04:12.163Z",
+        "posted_on": "2022-09-19T05:04:12.162Z"
+    }
+},
+{
+    "model": "MChat.chatmessage",
+    "pk": 18,
+    "fields": {
+        "thread": 1,
+        "user": 1,
+        "message": "arko test",
+        "timestamp": "2022-09-19T05:11:14.954Z",
+        "posted_on": "2022-09-19T05:11:14.953Z"
+    }
+},
+{
+    "model": "MChat.chatmessage",
+    "pk": 19,
+    "fields": {
+        "thread": 1,
+        "user": 1,
+        "message": "string ho",
+        "timestamp": "2022-09-19T05:12:14.386Z",
+        "posted_on": "2022-09-19T05:12:14.385Z"
+    }
+},
+{
+    "model": "MChat.chatmessage",
+    "pk": 20,
+    "fields": {
+        "thread": 1,
+        "user": 1,
+        "message": "moment",
+        "timestamp": "2022-09-19T05:13:14.687Z",
+        "posted_on": "2022-09-19T05:13:14.687Z"
+    }
+},
+{
+    "model": "MChat.chatmessage",
+    "pk": 21,
+    "fields": {
+        "thread": 1,
+        "user": 1,
+        "message": "aba ",
+        "timestamp": "2022-09-19T05:14:26.044Z",
+        "posted_on": "2022-09-19T05:14:26.043Z"
+    }
+},
+{
+    "model": "MChat.chatmessage",
+    "pk": 22,
+    "fields": {
+        "thread": 1,
+        "user": 1,
+        "message": "kamina",
+        "timestamp": "2022-09-19T05:16:09.561Z",
+        "posted_on": "2022-09-19T05:16:09.560Z"
+    }
+},
+{
+    "model": "MChat.chatmessage",
+    "pk": 23,
+    "fields": {
+        "thread": 1,
+        "user": 1,
+        "message": "aba kam garxa",
+        "timestamp": "2022-09-19T05:17:33.652Z",
+        "posted_on": "2022-09-19T05:17:33.650Z"
+    }
+},
+{
+    "model": "MChat.chatmessage",
+    "pk": 24,
+    "fields": {
+        "thread": 1,
+        "user": 1,
+        "message": "aba kam garxa",
+        "timestamp": "2022-09-19T05:18:16.828Z",
+        "posted_on": "2022-09-19T05:18:16.827Z"
+    }
+},
+{
+    "model": "MChat.chatmessage",
+    "pk": 25,
+    "fields": {
+        "thread": 1,
+        "user": 1,
+        "message": "machikini",
+        "timestamp": "2022-09-19T05:19:03.057Z",
+        "posted_on": "2022-09-19T05:19:03.056Z"
+    }
+},
+{
+    "model": "MChat.chatmessage",
+    "pk": 26,
+    "fields": {
+        "thread": 1,
+        "user": 1,
+        "message": "kamm garexa",
+        "timestamp": "2022-09-19T05:22:58.461Z",
+        "posted_on": "2022-09-19T05:22:58.460Z"
+    }
+},
+{
+    "model": "MChat.chatmessage",
+    "pk": 27,
+    "fields": {
+        "thread": 1,
+        "user": 1,
+        "message": "hora",
+        "timestamp": "2022-09-19T05:23:07.067Z",
+        "posted_on": "2022-09-19T05:23:07.066Z"
+    }
+},
+{
+    "model": "MChat.chatmessage",
+    "pk": 28,
+    "fields": {
+        "thread": 1,
+        "user": 1,
+        "message": "umm",
+        "timestamp": "2022-09-19T05:23:55.998Z",
+        "posted_on": "2022-09-19T05:23:55.997Z"
+    }
+},
+{
+    "model": "MChat.chatmessage",
+    "pk": 29,
+    "fields": {
+        "thread": 1,
+        "user": 1,
+        "message": "uu",
+        "timestamp": "2022-09-19T05:24:01.640Z",
+        "posted_on": "2022-09-19T05:24:01.640Z"
+    }
+},
+{
+    "model": "MAuthentication.user",
+    "pk": 1,
+    "fields": {
+        "password": "pbkdf2_sha256$390000$ruROKSIgzjpeojbeyAuup0$j+jAVIdNvbLoFZHeT2LDN0EW4cmOcqc42sVAXfZr5G0=",
+        "last_login": "2022-10-26T15:20:29.719Z",
+        "is_superuser": true,
+        "username": "Sam",
+        "first_name": "",
+        "last_name": "",
+        "email": "samirshahi9882@gmail.com",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2022-09-19T02:25:51Z",
+        "image": "userprofiles/1654786761779.jpg",
+        "is_email_verified": false,
+        "address": null,
+        "mobile": null,
+        "created": "2022-09-19T02:25:52.177Z",
+        "updated": "2022-09-19T02:55:59.672Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "MAuthentication.user",
+    "pk": 2,
+    "fields": {
+        "password": "pbkdf2_sha256$390000$S2E4EyNufJ5LwsOmmP9kh2$+HBHIC195MSM48nwi5grVEztWNVCZAKlfiWw/zPC0EE=",
+        "last_login": "2022-09-19T02:26:42.899Z",
+        "is_superuser": true,
+        "username": "Ram",
+        "first_name": "",
+        "last_name": "",
+        "email": "ram123@gmail.com",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2022-09-19T02:26:09.434Z",
+        "image": "images/profile.png",
+        "is_email_verified": false,
+        "address": null,
+        "mobile": null,
+        "created": "2022-09-19T02:26:09.733Z",
+        "updated": "2022-09-19T02:26:09.733Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "MAuthentication.user",
+    "pk": 3,
+    "fields": {
+        "password": "pbkdf2_sha256$390000$hve235QjbhAdAEPlUJvmEn$49nrXjByp7Yp9vH05cth7VI7dUaqkZ2/KN4px9TLnLA=",
+        "last_login": null,
+        "is_superuser": true,
+        "username": "Bishal",
+        "first_name": "",
+        "last_name": "",
+        "email": "bishal123@gmail.com",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2022-09-19T02:31:40Z",
+        "image": "userprofiles/bishalbhujel.jpg",
+        "is_email_verified": false,
+        "address": null,
+        "mobile": null,
+        "created": "2022-09-19T02:31:40.323Z",
+        "updated": "2022-09-19T02:55:17.552Z",
+        "groups": [],
+        "user_permissions": []
+    }
+}
+]
