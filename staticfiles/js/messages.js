@@ -10,7 +10,7 @@ const socket = new WebSocket(
     + window.location.pathname
 
     );
-
+console.log(socket)
 
 function get_active_other_user_id(){
     let other_user_id = $('.messages-wrapper.is_active').attr('other-user-id')
