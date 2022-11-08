@@ -2,6 +2,7 @@ let input_message = $('#input-message')
 let message_body = $('.msg_card_body')
 let send_message_form = $('#send-message-form')
 const USER_ID = $('#logged-in-user').val()
+console.log(USER_ID)
 
 let loc = window.location
 let wsStart = 'ws://'
@@ -11,7 +12,8 @@ if(loc.protocol === 'https') {
 }
 
 let endpoint = wsStart + loc.host + loc.pathname
-    var socket = new WebSocket(endpoint)
+console.log("Endpoint",endpoint)
+var socket = new WebSocket('ws://127.0.0.1:8000/chat/')
 
 function get_active_other_user_id(){
     let other_user_id = $('.messages-wrapper.is_active').attr('other-user-id')
