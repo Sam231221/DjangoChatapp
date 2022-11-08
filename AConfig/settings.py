@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-il2i31l!d$kn*!=ro18w*5-)(^pttckg0*-gp!u7g+=o4z$(+j
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['chitchat129.herokuapp.com','localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['chitchat129.herokuapp.com', 'localhost', '127.0.0.1']
 
 AUTH_USER_MODEL = 'MAuthentication.User'
 
@@ -137,20 +137,20 @@ MEDIA_URL ='/mediafiles/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# CHANNEL_LAYERS = {
-#     'default': {
-#         'BACKEND': 'channels.layers.InMemoryChannelLayer',
-#         # 'CONFIG': {
-#         #     'hosts': [('127.0.0.1', 6379)],
-#         # }
-#     }
-# }
-
 CHANNEL_LAYERS = {
-    "default": {
-        "BACKEND": "channels_redis.core.RedisChannelLayer",
-        "CONFIG": {
-            "hosts": [os.environ.get('REDIS_URL', 'redis://localhost:6379')],
-        },
-    },
+    'default': {
+        'BACKEND': 'channels.layers.InMemoryChannelLayer',
+        # 'CONFIG': {
+        #     'hosts': [('127.0.0.1', 6379)],
+        # }
+    }
 }
+
+# CHANNEL_LAYERS = {
+#     "default": {
+#         "BACKEND": "channels_redis.core.RedisChannelLayer",
+#         "CONFIG": {
+#             "hosts": [os.environ.get('REDIS_URL', 'redis://localhost:6379')],
+#         },
+#     },
+# }
