@@ -3,14 +3,15 @@ let message_body = $('.msg_card_body')
 let send_message_form = $('#send-message-form')
 const USER_ID = $('#logged-in-user').val()
 
+let loc = window.location
+let wsStart = 'ws://'
 
-const socket = new WebSocket(
-    (window.location.protocol === 'https:' ? 'wss' : 'ws') + '://'
-    + window.location.host
-    + window.location.pathname
+if(loc.protocol === 'https') {
+    wsStart = 'wss://'
+}
 
-    );
-console.log(socket)
+let endpoint = wsStart + loc.host + loc.pathname
+    var socket = new WebSocket(endpoint)
 
 function get_active_other_user_id(){
     let other_user_id = $('.messages-wrapper.is_active').attr('other-user-id')

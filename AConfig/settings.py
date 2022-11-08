@@ -143,7 +143,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 #         # 'CONFIG': {
 #         #     'hosts': [('127.0.0.1', 6379)],
 #         # }
-#     }3
+#     }
 # }
 
 CHANNEL_LAYERS = {
