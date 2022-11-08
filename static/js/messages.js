@@ -10,14 +10,8 @@ if(loc.protocol === 'https') {
     wsStart = 'wss://'
 }
 
-let endpoint =  (window.location.protocol === 'https:' ? 'wss' : 'ws') + '://'
-    + window.location.host
-    + window.location.pathname
-
-
-
-// let endpoint = wsStart + loc.host + loc.pathname
-var socket = new WebSocket(endpoint)
+let endpoint = wsStart + loc.host + loc.pathname
+    var socket = new WebSocket(endpoint)
 
 function get_active_other_user_id(){
     let other_user_id = $('.messages-wrapper.is_active').attr('other-user-id')
