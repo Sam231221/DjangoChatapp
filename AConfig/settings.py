@@ -156,6 +156,5 @@ CHANNEL_LAYERS = {
 }
 
 CSRF_TRUSTED_ORIGINS = [
-    'http://localhost:8000',
-    'https://chitchat129.herokuapp.com '
-],
+    'https://chitchat129.herokuapp.com'
+]
