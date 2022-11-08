@@ -16,6 +16,7 @@ class ChatConsumer(AsyncConsumer):
         print('connected', event)
         user = self.scope['user']
         self.chat_room = f'user_chatroom_{user.id}'
+        print("....", self.chat_room)
         await self.channel_layer.group_add(
             self.chat_room,
             self.channel_name
