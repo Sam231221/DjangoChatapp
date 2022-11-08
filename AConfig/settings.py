@@ -76,8 +76,8 @@ TEMPLATES = [
     },
 ]
 
-# WSGI_APPLICATION = 'AConfig.wsgi.application'
-ASGI_APPLICATION = 'AConfig.asgi.application'
+WSGI_APPLICATION = 'AConfig.wsgi.application'
+ASGI_APPLICATION = 'AConfig.routing.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
