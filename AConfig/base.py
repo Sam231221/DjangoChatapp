@@ -74,7 +74,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-SESSION_COOKIE_AGE = 60
 
 AUTHENTICATION_BACKENDS = (
     'social_core.backends.facebook.FacebookOAuth2',

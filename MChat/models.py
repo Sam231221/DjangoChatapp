@@ -25,7 +25,6 @@ class ThreadManager(models.Manager):
         return qs
 
 
-
 class Thread(models.Model):
     #sender
     first_person = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True, related_name='thread_first_person')
