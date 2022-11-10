@@ -1,0 +1,186 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/whatsapp.css' %}">
+    <title>ChitChat</title>
+
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+        integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+
+
+</head>
+<body>
+    {% if user.is_authenticated %}
+    <input type="hidden" id="logged-in-user" value="{{ user.id }}">
+    {% endif %}
+     <div class="chat-page">
+        <div class="container">
+
+            <!-- User Lists-->
+            <div class="box-left">
+    
+                <div class="header">
+                    
+                    <div class="userimg">
+                        <img src="{{user.image.url}}" alt="" class="cover">
+                
+                    </div>
+   
+                    <ul class="icons mb-0">
+                        <li><ion-icon name="scan-circle-outline"></ion-icon></li>
+                        <li><ion-icon name="chatbox"></ion-icon></li>
+                        <li><ion-icon name="ellipsis-vertical"></ion-icon></li>
+                    </ul>
+                </div>
+    
+                <div class="search">
+                    <div>
+                        <input type="text" placeholder="Search or start new chat">
+                        <ion-icon name="search-outline"></ion-icon>
+                    </div>
+                </div>
+    
+                <div class="chatlist">
+    
+                    {% for thread in Threads %}
+                    <div class="{% if forloop.first %}active{% endif %} 
+                    contact-li block contact-li unread" 
+                    data-target-tab="#chat_{{ thread.id }}"
+                    style="cursor: pointer"
+                    chat-id="chat_{{ thread.id }}" >
+                     
+                        {% if thread.first_person == user %}
+                        <div class="imgbx">
+                            <img src="{{thread.second_person.image.url}}" alt="" class="cover">
+                        </div>
+    
+                        <div class="details">
+                            <div class="listhead">
+                                <h4>{{ thread.second_person.username }}</h4>
+                                <p class="time">12:14</p>
+                            </div>
+    
+                            <div class="message">
+                                {% if  thread.chatmessage_thread.last  %}
+                                <p>{{ thread.chatmessage_thread.last }} </p>
+                                {% else %}
+                                <p>Tap to send a message.</p>
+                                {% endif %}
+                                
+                                <b>{{ thread.chatmessage_thread.all.count }} </b>
+                               
+                            </div>
+                        </div>
+
+                        {% endif %}
+    
+                    </div>
+                    {% endfor %}
+    
+                </div>
+                
+            </div>
+    
+            <!--Dynamic User Message-->
+            <div class="box-right">
+                {% for thread in Threads %}
+                <div class="box-right messages-wrapper
+                {% if forloop.first %}
+                hide is_active
+                {% else %}hide{% endif %} "
+                id="chat_{{ thread.id }}"
+                chat-id="chat_{{ thread.id }}"
+                other-user-id="{% if thread.first_person == user %}{{ thread.second_person.id }} {% else %} {{ thread.first_person.id }} {% endif %}">
+    
+                    <div class="header">
+    
+                        <div class="img-perfil">
+                            <!--Show Second person if first person is user-->
+                            {% if thread.first_person == user %}
+                            <div class="userimg">
+                                <img src="{{thread.second_person.image.url}}" alt="" class="cover">
+                            </div>
+    
+    
+                            <h4>{{ thread.second_person.username }} 
+                                <br><span>Online</span></h4>
+    
+                            {% else %}
+                            <div class="userimg">
+                                <img src="{{thread.first_person.usernanme}}" alt="" class="cover">
+                            </div>
+                            <h4>{{ thread.first_person.username }} 
+                                <br><span>Online</span>
+                            </h4>
+    
+                            {% endif %}
+    
+                        
+                        </div>
+    
+                        <ul class="icons">
+                            <li><ion-icon name="search-outline"></ion-icon></li>
+                            <li><ion-icon name="ellipsis-vertical"></ion-icon></li>
+                        </ul>
+                    
+                    </div>
+    
+                    <div class="chat">
+                        {% for chat in thread.chatmessage_thread.all %}
+                        {% if chat.user == user %}
+                        <div class="messages d-flex you-message">
+                            <p>{{ chat.message }}
+                                <br>
+                                <span> {{ chat.timestamp | timesince}} ago</span>
+                            </p>
+                        </div>
+                        {% else %}
+                        <div class="messages friend-message">
+                            <p>{{ chat.message }}
+                                <br>
+                                <span> {{ chat.timestamp | timesince}} ago</span>
+                        </p>
+                        </div>
+                        {% endif %}
+                        {% endfor %}
+                    </div>
+    
+    
+                </div>
+                {% endfor %}
+                <form class="chatbox-input" id="send-message-form" >
+                    <ion-icon name="happy-outline"></ion-icon>
+                    <ion-icon name="attach-outline"></ion-icon>
+                    <input type="text" id="input-message" placeholder="Send an Message">
+                    <button style="border:none; background:none;" type="submit">
+                        <span class="input-group-text send_btn">
+                            <i class="fas fa-location-arrow"></i>
+                        </span>
+                    </button>
+                    <ion-icon name="mic-outline"></ion-icon>
+                </form>
+    
+            </div>
+    
+    
+        </div>
+     </div>
+
+<script src="{% static 'js/messages.js' %}"></script>
+<script src="{% static 'js/moment.js' %}"></script>
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    
+</body>
+</html>

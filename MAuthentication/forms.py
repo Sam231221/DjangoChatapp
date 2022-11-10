@@ -7,11 +7,11 @@ class SignUpForm(forms.ModelForm):
     
     password1 = forms.CharField(
         label="Password",
-        widget=forms.PasswordInput(attrs={'class':'password','placeholder':'Enter a password'}),
+        widget=forms.PasswordInput(attrs={'class':'form-control password','placeholder':'Enter a password'}),
     )
     password2 = forms.CharField(
         label="Confirm password",
-        widget=forms.PasswordInput(attrs={'class':'password','placeholder':'Reenter  the password'}),
+        widget=forms.PasswordInput(attrs={'class':'form-control password','placeholder':'Reenter  the password'}),
     )   
     
     class Meta:
@@ -19,8 +19,8 @@ class SignUpForm(forms.ModelForm):
         fields = ['username', 'email', 'password1', 'password2']
    
         widgets = {
-            'username': forms.TextInput(attrs={ 'placeholder':'Enter a Username'}),
-            'email': forms.EmailInput(attrs={'placeholder':'Provide your Email'}),
+            'username': forms.TextInput(attrs={'class':'form-control', 'placeholder':'Enter a Username'}),
+            'email': forms.EmailInput(attrs={'class':'form-control', 'placeholder':'Provide your Email'}),
             'password1': forms.PasswordInput(attrs={'placeholder':'Enter a Password'}),
             'password2': forms.PasswordInput(attrs={'placeholder':'ReType the Password'}),
                 
@@ -40,7 +40,7 @@ class LogInForm(forms.ModelForm):
         fields = ['username','password']
    
         widgets = {
-            'username': forms.TextInput(attrs={ 'placeholder':'Enter you Username'}),
-            'password': forms.PasswordInput(attrs={'class':'password','placeholder':'Enter your Password'}),
+            'username': forms.TextInput(attrs={ 'class':'form-control','placeholder':'Enter you Username'}),
+            'password': forms.PasswordInput(attrs={'class':'password form-control','placeholder':'Enter your Password'}),
         }
         

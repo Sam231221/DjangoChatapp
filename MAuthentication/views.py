@@ -21,10 +21,8 @@ User = get_user_model()
 import datetime
 
 from django.contrib import sessions
-
 from .emailthreading import EmailThread
 from .utils import generate_token
-
 
 class HomeView(View):
     def get(self, request):
@@ -37,7 +35,8 @@ DOnt make superuser from the termninal.
 
 class RegistrationView(View):
     def get(self, request):
-        return render(request, "authentication/register.html")
+        return render(request, 'Auth/SignUp.html')
+        # return render(request, "authentication/register.html")
 
     def post(self, request):
         context = {"data": request.POST, "has_error": False}
@@ -48,17 +47,6 @@ class RegistrationView(View):
         password2 = request.POST.get("password2")
         print(name, email, password1)
         
-        #Recaptcha check
-        recaptcha_response = request.POST.get('g-recaptcha-response')
-        url = 'https://www.google.com/recaptcha/api/siteverify'
-        recaptcha_dict = {
-            'secret': GOOGLE_RECAPTCHA_SECRET_KEY,
-            'response': recaptcha_response
-        }
-        data = urllib.parse.urlencode(recaptcha_dict).encode()
-        req =  urllib.request.Request(url, data=data)
-        response = urllib.request.urlopen(req)
-        result = json.loads(response.read().decode())
         
         if len(password1) < 6:
             messages.error(request, "Password must be at least 6 characters long.")
@@ -70,11 +58,6 @@ class RegistrationView(View):
         if not validate(email_address=email):
             messages.error(request, "Please provide a valid email")
             context["has_error"] = True
-        
-        #recaptcha api sends json object with one key'sucsess', It's value is boolean
-        if not result['success']:
-            messages.error(request, "Recaptcha Failed")
-            context["has_error"] = True                
 
         try:
             if User.objects.get(email=email):
@@ -94,12 +77,13 @@ class RegistrationView(View):
 
         if context["has_error"]:
           # messages.error(request,"Unable to register. Client error!")
-            return render(request, "authentication/register.html", context, status=400)
+            return render(request, "Auth/SignUp.html", context, status=400)
 
         user = User.objects.create(username=name, email=email, password=password1)
         user.set_password(password1)
         user.is_active = False
         user.save()
+
 
         current_site = get_current_site(request)
         email_subject = "Active your Account"
@@ -136,12 +120,14 @@ class RegistrationView(View):
 
 class LoginView(View):
     def get(self, request):
-        return render(request, "authentication/login.html")
+        return render(request, "Auth/SignIn.html")
+        # return render(request, "authentication/login.html")
 
     def post(self, request):
         context = {"data": request.POST, "has_error": False}
         username = request.POST.get("username")
         password = request.POST.get("password")
+        print(username, password)
         if not username:
             messages.error(request, "Username is required")
             context["has_error"] = True
@@ -159,13 +145,11 @@ class LoginView(View):
             messages.error(request, "Email Verification failed!")
             context["has_error"] = True
 
-        if context["has_error"]:
-            return render(request, "authentication/login.html", status=401, context=context)
-        #
         #authenticate.login(request,user)
         login(request, user, backend='django.contrib.auth.backends.ModelBackend')
+        print(login(request, user, backend='django.contrib.auth.backends.ModelBackend'))
         messages.success(request, "Logged In Successfully!")
-        return redirect("home-view")
+        return redirect('home-view')
 
 class ActivateAccountView(View):
     def get(self, request, uidb64, token):

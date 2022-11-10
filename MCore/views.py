@@ -1,31 +1,35 @@
 from django.shortcuts import render, redirect
-from django.contrib.auth.models import User, auth
+from MAuthentication.models import User
+from django.contrib.auth.models import auth
 from django.contrib import messages
 from django.http import HttpResponse
 from django.contrib.auth.decorators import login_required
-from .models import Profile, Post, LikePost, FollowersCount
+from .models import  Post, LikePost, FollowersCount
 from itertools import chain
 import random
 
+from MChat.models import Thread
 # Create your views here.
 
-@login_required(login_url='signin')
-def index(request):
+@login_required
+def home(request):
     user_object = User.objects.get(username=request.user.username)
-    user_profile = Profile.objects.get(user=user_object)
 
     user_following_list = []
     feed = []
-
+    
+    #get user's all following
     user_following = FollowersCount.objects.filter(follower=request.user.username)
 
     for users in user_following:
-        
         user_following_list.append(users.user)
     print(user_following_list)
 
-    for usernames in user_following_list:
-        feed_lists = Post.objects.filter(user=usernames)
+
+    #Get posts of all the people that users follow
+    for username in user_following_list:
+        user_obj =User.objects.filter(username=username).first()
+        feed_lists = Post.objects.filter(user=user_obj)
         feed.append(feed_lists)
     #posts    
     feed_list = list(chain(*feed))
@@ -43,23 +47,15 @@ def index(request):
     new_suggestions_list = [x for x in list(all_users) if (x not in list(user_following_all))]
     current_user = User.objects.filter(username=request.user.username)
     final_suggestions_list = [x for x in list(new_suggestions_list) if ( x not in list(current_user))]
-    random.shuffle(final_suggestions_list)
+    
+    context = {
+        'user_profile': user_object,
+        'posts':feed_list,
+        'suggestions_username_list': final_suggestions_list[:4]
+       }
+    return render(request,'frontendbase.html', context)
 
-    username_profile = []
-    username_profile_list = []
-
-    for users in final_suggestions_list:
-        username_profile.append(users.id)
-
-    for ids in username_profile:
-        profile_lists = Profile.objects.filter(id_user=ids)
-        username_profile_list.append(profile_lists)
-    suggestions_username_profile_list = list(chain(*username_profile_list))
-
-
-    return render(request, 'index.html', {'user_profile': user_profile, 'posts':feed_list, 'suggestions_username_profile_list': suggestions_username_profile_list[:4]})
-
-@login_required(login_url='signin')
+@login_required
 def upload(request):
 
     if request.method == 'POST':
@@ -74,7 +70,7 @@ def upload(request):
     else:
         return redirect('/')
 
-@login_required(login_url='signin')
+@login_required
 def search(request):
     user_object = User.objects.get(username=request.user.username)
     user_profile = Profile.objects.get(user=user_object)
@@ -96,7 +92,7 @@ def search(request):
         username_profile_list = list(chain(*username_profile_list))
     return render(request, 'search.html', {'user_profile': user_profile, 'username_profile_list': username_profile_list})
 
-@login_required(login_url='signin')
+@login_required
 def like_post(request):
     username = request.user.username
     post_id = request.GET.get('post_id')
@@ -117,7 +113,7 @@ def like_post(request):
         post.save()
         return redirect('/')
 
-@login_required(login_url='signin')
+@login_required
 def profile(request, pk):
     user_object = User.objects.get(username=pk)
     user_profile = Profile.objects.get(user=user_object)
@@ -146,24 +142,30 @@ def profile(request, pk):
     }
     return render(request, 'profile.html', context)
 
-@login_required(login_url='signin')
+@login_required
 def follow(request):
     if request.method == 'POST':
         follower = request.POST['follower']
         user = request.POST['user']
+        user_obj= User.objects.filter(username=user).first()
+        follower_obj = User.objects.filter(username=follower).first()
 
         if FollowersCount.objects.filter(follower=follower, user=user).first():
             delete_follower = FollowersCount.objects.get(follower=follower, user=user)
+            delete_thread = Thread.objects.get(first_person=follower_obj, second_person=user_obj )
             delete_follower.delete()
+            delete_thread.delete()
             return redirect('/profile/'+user)
         else:
             new_follower = FollowersCount.objects.create(follower=follower, user=user)
+            new_thread = Thread.objects.create(first_person=follower_obj, second_person=user_obj )
             new_follower.save()
+            new_thread.save()
             return redirect('/profile/'+user)
     else:
         return redirect('/')
 
-@login_required(login_url='signin')
+@login_required
 def settings(request):
     user_profile = Profile.objects.get(user=request.user)
 

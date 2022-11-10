@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" type="image/x-icon" href="/assets/images/favicon.png">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/d3d6f2df1f.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css" />
+    <link rel="stylesheet" href="/Css/authenticationstyle.css">
+    <link rel="stylesheet" href="/Css/frontendbase.css">
+    <link rel="stylesheet" href="/Css/UserProfile.css">
+
+    <title>Dimensions(@thakuri_sameer.21)</title>
+</head>
+
+<body>
+
+    <!--Navbar-->
+    <nav class="navbar fixed-top mb-5 navbar-expand-lg navbar-light bg-light">
+        <div class="container justify-content-center">
+
+            <div class="d-flex flex-row justify-content-between align-items-center col-9">
+                <!--Brand-->
+                <a class="navbar-brand" href="/index.html">
+                    <img src="/assets/images/ig-logo1.png" alt="img1" loading="lazy">
+                </a>
+
+                <div class="search-engine">
+                    <form class="form-inline my-2 my-lg-0">
+                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                    </form>
+                </div>
+
+                <div class="d-flex flex-row">
+                    <ul class="list-inline m-0">
+
+                        <li class="list-inline-item">
+                            <a href="#" class="link-menu">
+                                <svg width="1.5em" height="1.5em" viewBox="0 0 16 16" class="bi bi-house-door-fill"
+                                    fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M6.5 10.995V14.5a.5.5 0 0 1-.5.5H2a.5.5 0 0 1-.5-.5v-7a.5.5 0 0 1 .146-.354l6-6a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 .146.354v7a.5.5 0 0 1-.5.5h-4a.5.5 0 0 1-.5-.5V11c0-.25-.25-.5-.5-.5H7c-.25 0-.5.25-.5.495z" />
+                                    <path fill-rule="evenodd"
+                                        d="M13 2.5V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z" />
+                                </svg>
+                            </a>
+                        </li>
+
+                        <li class="list-inline-item ml-2">
+                            <a href="#" class="link-menu">
+                                <svg aria-label="Messenger" class="_8-yf5 " color="#262626" fill="#262626" height="24"
+                                    role="img" viewBox="0 0 24 24" width="24">
+                                    <path
+                                        d="M12.003 2.001a9.705 9.705 0 110 19.4 10.876 10.876 0 01-2.895-.384.798.798 0 00-.533.04l-1.984.876a.801.801 0 01-1.123-.708l-.054-1.78a.806.806 0 00-.27-.569 9.49 9.49 0 01-3.14-7.175 9.65 9.65 0 0110-9.7z"
+                                        fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="1.739">
+                                    </path>
+                                    <path
+                                        d="M17.79 10.132a.659.659 0 00-.962-.873l-2.556 2.05a.63.63 0 01-.758.002L11.06 9.47a1.576 1.576 0 00-2.277.42l-2.567 3.98a.659.659 0 00.961.875l2.556-2.049a.63.63 0 01.759-.002l2.452 1.84a1.576 1.576 0 002.278-.42z"
+                                        fill-rule="evenodd"></path>
+                                </svg>
+                            </a>
+
+                        </li>
+
+
+                        <li class="list-inline-item ml-2  ">
+                            <a href="#test-form" class="popup-with-form ">
+                                <svg aria-label="New Post" class="_8-yf5 " color="#262626" fill="#262626" height="24"
+                                    role="img" viewBox="0 0 24 24" width="24">
+                                    <path
+                                        d="M2 12v3.45c0 2.849.698 4.005 1.606 4.944.94.909 2.098 1.608 4.946 1.608h6.896c2.848 0 4.006-.7 4.946-1.608C21.302 19.455 22 18.3 22 15.45V8.552c0-2.849-.698-4.006-1.606-4.945C19.454 2.7 18.296 2 15.448 2H8.552c-2.848 0-4.006.699-4.946 1.607C2.698 4.547 2 5.703 2 8.552z"
+                                        fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                        stroke-width="2"></path>
+                                    <line fill="none" stroke="currentColor" stroke-linecap="round"
+                                        stroke-linejoin="round" stroke-width="2" x1="6.545" x2="17.455" y1="12.001"
+                                        y2="12.001"></line>
+                                    <line fill="none" stroke="currentColor" stroke-linecap="round"
+                                        stroke-linejoin="round" stroke-width="2" x1="12.003" x2="12.003" y1="6.545"
+                                        y2="17.455"></line>
+                                </svg>
+                            </a>
+
+                            <form id="test-form" class="border-2 mfp-hide white-popup-wide">
+                                <p style="font-size:1.4rem;">Create New Post</p>
+                                <hr>
+                                <fieldset style="border:0;">
+
+                                    <svg aria-label="Icon to represent media such as images or videos" class="_8-yf5 "
+                                        color="#262626" fill="#262626" height="77" role="img" viewBox="0 0 97.6 77.3"
+                                        width="96">
+                                        <path
+                                            d="M16.3 24h.3c2.8-.2 4.9-2.6 4.8-5.4-.2-2.8-2.6-4.9-5.4-4.8s-4.9 2.6-4.8 5.4c.1 2.7 2.4 4.8 5.1 4.8zm-2.4-7.2c.5-.6 1.3-1 2.1-1h.2c1.7 0 3.1 1.4 3.1 3.1 0 1.7-1.4 3.1-3.1 3.1-1.7 0-3.1-1.4-3.1-3.1 0-.8.3-1.5.8-2.1z"
+                                            fill="currentColor"></path>
+                                        <path
+                                            d="M84.7 18.4L58 16.9l-.2-3c-.3-5.7-5.2-10.1-11-9.8L12.9 6c-5.7.3-10.1 5.3-9.8 11L5 51v.8c.7 5.2 5.1 9.1 10.3 9.1h.6l21.7-1.2v.6c-.3 5.7 4 10.7 9.8 11l34 2h.6c5.5 0 10.1-4.3 10.4-9.8l2-34c.4-5.8-4-10.7-9.7-11.1zM7.2 10.8C8.7 9.1 10.8 8.1 13 8l34-1.9c4.6-.3 8.6 3.3 8.9 7.9l.2 2.8-5.3-.3c-5.7-.3-10.7 4-11 9.8l-.6 9.5-9.5 10.7c-.2.3-.6.4-1 .5-.4 0-.7-.1-1-.4l-7.8-7c-1.4-1.3-3.5-1.1-4.8.3L7 49 5.2 17c-.2-2.3.6-4.5 2-6.2zm8.7 48c-4.3.2-8.1-2.8-8.8-7.1l9.4-10.5c.2-.3.6-.4 1-.5.4 0 .7.1 1 .4l7.8 7c.7.6 1.6.9 2.5.9.9 0 1.7-.5 2.3-1.1l7.8-8.8-1.1 18.6-21.9 1.1zm76.5-29.5l-2 34c-.3 4.6-4.3 8.2-8.9 7.9l-34-2c-4.6-.3-8.2-4.3-7.9-8.9l2-34c.3-4.4 3.9-7.9 8.4-7.9h.5l34 2c4.7.3 8.2 4.3 7.9 8.9z"
+                                            fill="currentColor"></path>
+                                        <path
+                                            d="M78.2 41.6L61.3 30.5c-2.1-1.4-4.9-.8-6.2 1.3-.4.7-.7 1.4-.7 2.2l-1.2 20.1c-.1 2.5 1.7 4.6 4.2 4.8h.3c.7 0 1.4-.2 2-.5l18-9c2.2-1.1 3.1-3.8 2-6-.4-.7-.9-1.3-1.5-1.8zm-1.4 6l-18 9c-.4.2-.8.3-1.3.3-.4 0-.9-.2-1.2-.4-.7-.5-1.2-1.3-1.1-2.2l1.2-20.1c.1-.9.6-1.7 1.4-2.1.8-.4 1.7-.3 2.5.1L77 43.3c1.2.8 1.5 2.3.7 3.4-.2.4-.5.7-.9.9z"
+                                            fill="currentColor"></path>
+                                    </svg>
+                                    <p style="font-size: 1rem;">Drag photos and videos here.</p>
+                                    caption and location, comment disable
+                                </fieldset>
+
+                                <input type='file' id="getFile">
+
+                            </form>
+
+                        </li>
+
+
+                        <li class="list-inline-item ml-2">
+                            <a href="#" class="link-menu">
+                                <svg width="1.5em" height="1.5em" viewBox="0 0 16 16" class="bi bi-compass"
+                                    fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd"
+                                        d="M8 15.016a6.5 6.5 0 1 0 0-13 6.5 6.5 0 0 0 0 13zm0 1a7.5 7.5 0 1 0 0-15 7.5 7.5 0 0 0 0 15z" />
+                                    <path
+                                        d="M6 1a1 1 0 0 1 1-1h2a1 1 0 0 1 0 2H7a1 1 0 0 1-1-1zm.94 6.44l4.95-2.83-2.83 4.95-4.95 2.83 2.83-4.95z" />
+                                </svg>
+                            </a>
+                        </li>
+
+                        <li class="list-inline-item ml-2">
+                            <a href="#" class="link-menu">
+                                <svg width="1.5em" height="1.5em" viewBox="0 0 16 16" class="bi bi-heart"
+                                    fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd"
+                                        d="M8 2.748l-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z" />
+                                </svg>
+                            </a>
+                        </li>
+
+                        <li class="list-inline-item ml-2 dropdown text-end align-middle">
+
+                            <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle"
+                                id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+                                <img src="/assets/images/me5.jpg" alt="mdo" width="29" height="29"
+                                    class="rounded-circle">
+                            </a>
+                            <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1">
+                                <li><a class="dropdown-item p-0" href="/Profile/UserProfile.html"><i
+                                            class="bi bi-person-circle mx-3"></i>Profile</a></li>
+                                <li class="mt-2"><a class="dropdown-item p-0" href="#"><i
+                                            class="bi bi-bookmark mx-3"></i>Saved</a></li>
+                                <li class="mt-2"><a class="dropdown-item p-0" href="#"><i
+                                            class="bi bi-gear-wide mx-3"></i>Settings</a></li>
+
+                                <hr>
+                                <li><a class="dropdown-item" href="/Authentication/SignIn.html">Log out</a></li>
+                            </ul>
+
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5 p-3">
+        <div class="row justify-content-center">
+
+            <div class="col-3  border edit-options">
+                <div class="row">
+                    <div class="col-12 p-0">
+                        <ul>
+                            <li><a href="{% url 'updateprofile' %}">Edit Profile</a></li>
+                            <li><a href="{% url 'change-password' %}">Change Password</a></li>
+                            <li><a href="#">Apps and Websites</a></li>
+                            <li><a href="#">Email and SMS</a></li>
+                            <li><a href="#">Push Notifications</a></li>
+                            <li><a href="#">Privacy and Security</a></li>
+                            <li><a href="#">Login Activity</a></li>
+                            <li><a href="#">Emails from Instagram</a></li>
+                            <li><a href="#">Help</a></li>
+                            <div class="mb-2 p-5 text-center"><a href="#"><strong style="color: #0095f6;">Switch to
+                                        Professional Account</strong></a>
+                            </div>
+                        </ul>
+                    </div>
+
+                    <!--Links-->
+                    <div class="col-12 border">
+                        <svg class="mt-4" aria-label="Facebook wordmark and family of apps logo" height="12"
+                            viewBox="0 0 500 100" width="60">
+                            <defs>
+                                <linearGradient gradientUnits="userSpaceOnUse" id="b" x1="125" x2="160.217" y1="97"
+                                    y2="57.435">
+                                    <stop offset=".21" stop-color="#0278F1"></stop>
+                                    <stop offset=".533" stop-color="#0180FA"></stop>
+                                </linearGradient>
+                                <linearGradient gradientUnits="userSpaceOnUse" id="c" x1="44" x2="0" y1="5" y2="64">
+                                    <stop offset=".427" stop-color="#0165E0"></stop>
+                                    <stop offset=".917" stop-color="#0180FA"></stop>
+                                </linearGradient>
+                                <linearGradient gradientUnits="userSpaceOnUse" id="d" x1="28.5" x2="135" y1="29"
+                                    y2="72">
+                                    <stop stop-color="#0064E0"></stop>
+                                    <stop offset=".656" stop-color="#0066E2"></stop>
+                                    <stop offset="1" stop-color="#0278F1"></stop>
+                                </linearGradient>
+                                <clipPath id="a">
+                                    <path d="M0 0h496.236v100H0z" fill="#fff"></path>
+                                </clipPath>
+                            </defs>
+                            <g clip-path="url(#a)">
+                                <path
+                                    d="M182.141 3.213h18.808l31.98 57.849 31.979-57.849h18.401V98.27h-15.345V25.416l-28.042 50.448h-14.394l-28.042-50.448V98.27h-15.345V3.213ZM332.804 99.967c-7.107 0-13.353-1.573-18.739-4.718-5.387-3.146-9.586-7.504-12.595-13.07-3.011-5.569-4.515-11.95-4.515-19.148 0-7.287 1.47-13.738 4.413-19.35 2.942-5.613 7.027-10.004 12.255-13.173 5.229-3.168 11.238-4.753 18.027-4.753 6.744 0 12.55 1.596 17.416 4.787 4.865 3.191 8.611 7.661 11.237 13.41 2.624 5.749 3.938 12.492 3.938 20.233v4.21h-52.077c.95 5.794 3.292 10.354 7.027 13.68 3.735 3.328 8.453 4.991 14.157 4.991 4.571 0 8.509-.679 11.814-2.037 3.303-1.358 6.404-3.417 9.302-6.178l8.147 9.98c-8.103 7.425-18.038 11.136-29.807 11.136Zm11.204-56.389c-3.215-3.281-7.425-4.923-12.629-4.923-5.07 0-9.314 1.676-12.731 5.025-3.418 3.35-5.58 7.854-6.484 13.512h37.343c-.453-5.794-2.286-10.331-5.499-13.614ZM382.846 40.014h-14.123V27.453h14.123V6.676h14.802v20.777h21.455v12.561h-21.455v31.844c0 5.295.905 9.075 2.716 11.338 1.809 2.264 4.911 3.395 9.302 3.395 1.945 0 3.598-.078 4.956-.237a92.35 92.35 0 0 0 4.481-.646v12.425c-1.675.498-3.564.906-5.669 1.223a44.63 44.63 0 0 1-6.62.475c-15.979 0-23.968-8.735-23.968-26.208V40.014ZM496.236 98.27h-14.53v-9.913c-2.58 3.712-5.862 6.575-9.845 8.588-3.983 2.014-8.51 3.022-13.579 3.022-6.247 0-11.78-1.596-16.601-4.787s-8.612-7.581-11.373-13.172c-2.761-5.59-4.142-11.983-4.142-19.18 0-7.243 1.403-13.648 4.21-19.216 2.806-5.567 6.688-9.935 11.645-13.104 4.956-3.168 10.648-4.753 17.075-4.753 4.844 0 9.189.94 13.037 2.818a25.768 25.768 0 0 1 9.573 7.978v-9.098h14.53V98.27Zm-14.801-46.035c-1.585-4.028-4.085-7.207-7.503-9.54-3.418-2.33-7.367-3.496-11.848-3.496-6.338 0-11.384 2.128-15.141 6.382-3.758 4.255-5.635 10.004-5.635 17.246 0 7.289 1.809 13.06 5.431 17.314 3.621 4.255 8.532 6.382 14.734 6.382 4.571 0 8.645-1.176 12.222-3.53 3.575-2.353 6.155-5.522 7.74-9.506V52.235Z"
+                                    fill="#1C2B33"></path>
+                                <path
+                                    d="M108 0C95.66 0 86.015 9.294 77.284 21.1 65.284 5.821 55.25 0 43.24 0 18.76 0 0 31.862 0 65.586 0 86.69 10.21 100 27.31 100c12.308 0 21.16-5.803 36.897-33.31 0 0 6.56-11.584 11.072-19.564 1.582 2.553 3.243 5.3 4.997 8.253l7.38 12.414C102.03 91.848 110.038 100 124.551 100c16.659 0 25.931-13.492 25.931-35.034C150.483 29.656 131.301 0 108 0ZM52.207 59.241c-12.759 20-17.172 24.483-24.276 24.483-7.31 0-11.655-6.418-11.655-17.862 0-24.483 12.207-49.517 26.759-49.517 7.88 0 14.465 4.55 24.552 18.991-9.578 14.691-15.38 23.905-15.38 23.905Zm48.153-2.517-8.823-14.715a301.425 301.425 0 0 0-6.884-10.723c7.952-12.274 14.511-18.39 22.313-18.39 16.206 0 29.172 23.863 29.172 53.173 0 11.172-3.659 17.655-11.241 17.655-7.268 0-10.739-4.8-24.537-27Z"
+                                    fill="#0180FA"></path>
+                                <path
+                                    d="M145.586 35H130.66c3.452 8.746 5.478 19.482 5.478 31.069 0 11.172-3.659 17.655-11.241 17.655-1.407 0-2.672-.18-3.897-.631V99.82c1.143.122 2.324.18 3.552.18 16.659 0 25.931-13.492 25.931-35.034 0-10.737-1.774-20.95-4.897-29.966Z"
+                                    fill="url(#b)"></path>
+                                <path
+                                    d="M43.241 0c.254 0 .507.003.759.008v16.36c-.32-.015-.642-.023-.965-.023-14.183 0-26.139 23.782-26.736 47.655H.014C.59 30.87 19.143 0 43.24 0Z"
+                                    fill="url(#c)"></path>
+                                <path
+                                    d="M43.241 0c11.152 0 20.601 5.02 31.502 17.971 3.065 3.828 6.761 8.805 10.716 14.557l.017.025.025-.003a311.041 311.041 0 0 1 6.036 9.459l8.823 14.715c13.798 22.2 17.269 27 24.537 27H125v16.273c-.149.002-.298.003-.448.003-14.513 0-22.522-8.152-36.897-32.207l-7.38-12.414a596.368 596.368 0 0 0-2.294-3.834L78 51.5c-5.5-9-9-14.5-12-18.5l-.05.038c-9.18-12.63-15.47-16.693-22.916-16.693H43V0L43.241 0Z"
+                                    fill="url(#d)"></path>
+                            </g>
+                        </svg>
+                        <p class="mt-2"><strong style="color: #0095f6;">Accounts Center</strong></p>
+                        <p style="font-size: 12px;
+                    color: grey;"> Control settings for connected experiences across Instagram, the Facebook app and
+                            Messenger,
+                            including story and post sharing and logging in.</p>
+
+                    </div>
+
+                    <div class="col"></div>
+                </div>
+
+
+            </div>
+
+            <!--Form-->
+
+            <div class="col-6  border edit-form">
+                <div class="row m-3 flex-row ">
+
+                    <div class="col-12">
+                        <div class="row">
+                            <div class="col-3">
+                                <img src="/assets/images/me5.jpg"
+                                    class="profile-sm-cover rounded-circle rounded mx-auto d-block" alt="image">
+                            </div>
+
+                            <div class="col">
+
+                                <h5 class="mb-1">thakuri.sameer_12</h5>
+                                <p><a href=""><strong style="color: #0095f6;">
+                                            Change Profile Photo
+                                        </strong>
+                                    </a></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <form class="p-3" action="POST">
+                        <div class="col p-2 d-flex align-items-center justify-content-center">
+                            <label for="name" class="form-label"> <strong> Name</strong></label>
+                            <input class="mx-2 form-control" type="text" id="name">
+                        </div>
+                        <p style="font-size: 11px; margin-left: 3.9rem; color: #8f8f8f;">You are using the same name on
+                            Instagram and
+                            Facebook.
+                            Go to Facebook to change
+                            your
+                            name. <a href="">Change Name</a></p>
+
+
+                        <br>
+
+                        <div class="col p-2 d-flex align-items-center justify-content-center">
+                            <label for="name" class="form-label"> <strong>Userame</strong>
+                            </label>
+                            <input class="mx-2 form-control" type="text" id="name">
+                        </div>
+                        <p style="font-size: 11px; margin-left: 3.9rem; color: #8f8f8f;"> In most cases, you'll be able
+                            to change your
+                            username back to thakuri.sameer_12 for another 14 days.
+                            <a href=""> Learn More</a>
+                        </p>
+
+                        <div class="col p-2 d-flex align-items-center justify-content-center">
+                            <label for="website" class="form-label"> <strong>Website</strong>
+                            </label>
+                            <input class="mx-2 form-control" type="url" placeholder="Website" id="website">
+                        </div>
+
+
+                        <div class="col p-2 d-flex align-items-center justify-content-center">
+                            <label for="bio" class="form-label"> <strong>Bio</strong>
+                            </label>
+                            <input class="mx-2 form-control" type="text" id="bio">
+                        </div>
+
+                        <p style="font-size: 11px; margin-left: 3.9rem; color: #8f8f8f;">
+
+                            <strong>Personal Information</strong>
+                            Provide your personal information, even if the account is used for a business, a pet or
+                            something else. This won't be a part of your public profile.
+                        </p>
+
+                        <div class="col p-2 d-flex align-items-center justify-content-center">
+                            <label for="email" class="form-label"> <strong>Email</strong>
+                            </label>
+                            <input class="mx-2 form-control" type="email" id="email">
+                        </div>
+                        <button class="btn btn-primary btn-sm">Submit</button>
+                    </form>
+
+                    <div class="row mt-4 justify-content-around">
+                        <div class="col ">
+                            <input class="btn btn-sm btn-primary  float-end form-control" disabled type="submit"
+                                value="Submit">
+                        </div>
+                        <div class="col-8">
+                            <a href="" class="float-end" style="color: #0095f6;">Temporarily disable my account</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+
+
+
+    </div>
+
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"></script>
+
+<script src="/Js/frontendbase.js"></script>
+</footer>
+
+</html>

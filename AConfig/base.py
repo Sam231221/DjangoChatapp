@@ -19,7 +19,9 @@ DEFAULT_APPS = [
 ]
 EXPLICT_APPS = [
     # 'django.contrib.sites',
+
     "MAuthentication.apps.MAuthenticationConfig",
+        "MCore.apps.MCoreConfig",
     'MChat.apps.MChatConfig',
 ]
 THIRDPARTY_PLUGIN = [

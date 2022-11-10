@@ -1,0 +1,104 @@
+{% extends 'Auth/base.html' %}
+{% load static %}
+{% block body %}
+
+
+    <div class="container" style="max-width: 360px;">
+        <div class="row align-items-center text-center  justify-content-center">
+
+            <div class="col-12 mt-lg-5 mt-sm-3">
+                <div class="card flex-row justify-content-center text-center align-items-center">
+                    <div class="card-body">
+                        <a class="navbar-brand" href="#">
+                            <img src="{% static 'images/ig-logo1.png' %}" alt="img1" href="/" class="rounded mx-auto d-block" alt="" width="230"
+                                height="70" loading="lazy">
+                        </a>
+                        <h5 style="color: #8e8e8e; margin-top: -0.9rem;">Sign up to see photos and videos from your
+                            friends.
+                        </h5>
+                        <div class="p-4 d-grid gap-2">
+                            <input type="submit" class="btn btn-primary mt-2" value="Log In With Facebook">
+                        </div>
+
+                        <h5 style="color: #8e8e8e;" class="text-center">Or</h5>
+
+                        <form class="p-4" novalidate action="{% url 'Account:register-view' %}" autocomplete="off" method="post">
+                            {% csrf_token %}
+                            <div class="row g-2">
+                                <div class="col-12">
+                                    <div class="form-field">
+                                        {{signupform.email}}
+                                    </div>
+                                </div>
+
+
+
+                                <div class="col-12">
+                                    <div class="form-field">
+                                        {{signupform.username}}
+                                    </div>
+                                </div>
+
+                                <div class="col-12">
+                                    <div class="form-field">
+                                        {{signupform.password1}}
+                                    </div>
+                                </div>
+
+                                <div class="col-12">
+                                    <div class="form-field">
+                                        {{signupform.password2}}
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <br>
+                            <div class="d-grid gap-2">
+                                <input type="submit" class="btn btn-primary mt-2" value="Sign Up">
+                            </div>
+
+                            <br>
+
+                            <p style="color: #8e8e8e; font-size: 14px;">By signing up, you agree to our Terms , Data
+                                Policy
+                                and Cookies Policy .</p>
+                        </form>
+
+                    </div>
+                </div>
+
+                <div class="card mt-2 flex-row justify-content-center text-center align-items-center">
+                    <div class="card-body mt-2">
+
+                        <p>Have an account?
+                            <a 
+                            href="{% url 'Account:login-view' %}" 
+                            style="color: rgb(13, 142, 142);"
+                            class="me-2">Log In</a>
+                        <p>
+
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col-12 mt-lg-2 mt-sm-1">
+                <p>Get the app.</p>
+                <div class="row flex-row align-items-center  justify-content-center">
+                    <div class="col">
+                        <img src="{% static 'images/downloadontheappstore.png' %}" class="img-thumbnail" alt="p1">
+                    </div>
+                    <div class="col">
+                        <img src="{% static 'images/getitonGooglePlay.png' %}" class="img-thumbnail" alt="p1">
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+ {% endblock %}   
+

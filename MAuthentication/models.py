@@ -20,6 +20,10 @@ class User(AbstractUser):
     mobile = models.CharField(max_length=10, null=True, blank=True)
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
+    bio = models.TextField(blank=True)
+    location = models.CharField(max_length=100, blank=True)
 
     def __str__(self):
         return str(self.username)
+
+
