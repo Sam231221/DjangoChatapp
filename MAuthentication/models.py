@@ -11,7 +11,7 @@ from django.contrib.auth.models import (
 from django.contrib.auth.models import AbstractUser, PermissionsMixin
 from django.db import models
 from django.utils.translation import gettext_lazy as _
-
+from django.urls import reverse
 
 class User(AbstractUser):
     image = models.ImageField(upload_to='userprofiles', default='images/profile.png')
@@ -26,4 +26,6 @@ class User(AbstractUser):
     def __str__(self):
         return str(self.username)
 
+    def get_absolute_url(self):
+        return reverse("user-detail-view", kwargs={"pk": self.id})
 

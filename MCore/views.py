@@ -4,6 +4,8 @@ from django.contrib.auth.models import auth
 from django.contrib import messages
 from django.http import HttpResponse
 from django.contrib.auth.decorators import login_required
+from django.views.generic import View
+from django.shortcuts import HttpResponseRedirect
 from .models import  Post, LikePost, FollowersCount
 from itertools import chain
 import random
@@ -155,15 +157,18 @@ def follow(request):
             delete_thread = Thread.objects.get(first_person=follower_obj, second_person=user_obj )
             delete_follower.delete()
             delete_thread.delete()
-            return redirect('/profile/'+user)
+            messages.error(request, "You unfollowed this user!")
+            return HttpResponseRedirect(request.META["HTTP_REFERER"])
         else:
             new_follower = FollowersCount.objects.create(follower=follower, user=user)
             new_thread = Thread.objects.create(first_person=follower_obj, second_person=user_obj )
             new_follower.save()
             new_thread.save()
-            return redirect('/profile/'+user)
+            messages.success(request, "You followed this user.")
+            return HttpResponseRedirect(request.META["HTTP_REFERER"])
     else:
-        return redirect('/')
+        messages.error(request, "Internal Server Error")
+        return HttpResponseRedirect(request.META["HTTP_REFERER"])
 
 @login_required
 def settings(request):
@@ -250,3 +255,28 @@ def signin(request):
 def logout(request):
     auth.logout(request)
     return redirect('signin')
+
+class UserProfileView(View):
+    def get(self, request, pk):
+        user = User.objects.get(id=pk)
+        user_posts = Post.objects.filter(user=user)
+        user_post_length = len(user_posts)
+        
+        #supposing request.user is follower of this user
+        follower = request.user.username
+        if FollowersCount.objects.filter(follower=follower, user=user).first():
+            button_text = 'Unfollow'
+        else:
+            button_text = 'Follow'
+
+        user_followers = len(FollowersCount.objects.filter(user=user.username))
+        user_following = len(FollowersCount.objects.filter(follower=user.username))
+        context = {
+            'user':user,
+            'user_posts': user_posts,
+            'user_post_length': user_post_length,
+            'button_text': button_text,
+            'user_followers': user_followers,
+            'user_following': user_following,
+        }        
+        return render(request, 'Profile/UserProfile.html', context)
