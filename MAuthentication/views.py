@@ -36,7 +36,6 @@ DOnt make superuser from the termninal.
 class RegistrationView(View):
     def get(self, request):
         return render(request, 'Auth/SignUp.html')
-        # return render(request, "authentication/register.html")
 
     def post(self, request):
         context = {"data": request.POST, "has_error": False}
@@ -88,7 +87,7 @@ class RegistrationView(View):
         current_site = get_current_site(request)
         email_subject = "Active your Account"
         
-        template = loader.get_template("authentication/activationlink.txt")
+        template = loader.get_template("Auth/activationlink.txt")
         context={
                 "user": user,
                 "domain": current_site.domain,
@@ -100,7 +99,7 @@ class RegistrationView(View):
         '''
            #only string not html
             message = render_to_string(
-            "authentication/activationlink.html",
+            "Auth/activationlink.html",
             {
                 "user": user,
                 "domain": current_site.domain,
@@ -121,7 +120,6 @@ class RegistrationView(View):
 class LoginView(View):
     def get(self, request):
         return render(request, "Auth/SignIn.html")
-        # return render(request, "authentication/login.html")
 
     def post(self, request):
         context = {"data": request.POST, "has_error": False}
@@ -165,7 +163,7 @@ class ActivateAccountView(View):
             user.save()
             messages.success(request, "Email verified successfully")
             return redirect("Account:login-view")
-        return render(request, "authentication/activate_failed.html", status=401)
+        return render(request, "Auth/activate_failed.html", status=401)
 
 
 def logoutview(request):
@@ -176,14 +174,14 @@ def logoutview(request):
 
 class RequestResetEmailView(View):
     def get(self, request):
-        return render(request, "authentication/request-reset-email.html")
+        return render(request, "Auth/request-reset-email.html")
 
     def post(self, request):
         email = request.POST["email"]
 
         if not validate_email(email):
             messages.error(request, "Please enter a valid email")
-            return render(request, "authentication/request-reset-email.html")
+            return render(request, "Auth/request-reset-email.html")
 
         user = User.objects.filter(email=email)
 
@@ -193,7 +191,7 @@ class RequestResetEmailView(View):
             
             #Render Simple string this time
             message = render_to_string(
-                "authentication/reset-user-password.html",
+                "Auth/reset-user-password.html",
                 {
                     "domain": current_site.domain,
                     "uid": urlsafe_base64_encode(force_bytes(user[0].pk)),
@@ -206,7 +204,7 @@ class RequestResetEmailView(View):
             EmailThread(email_message).start()
 
         messages.success(request, "We have sent you an email with instructions on how to reset your password")
-        return render(request, "authentication/request-reset-email.html")
+        return render(request, "Auth/request-reset-email.html")
 
 
 class SetNewPasswordView(View):
@@ -220,13 +218,13 @@ class SetNewPasswordView(View):
 
             if not PasswordResetTokenGenerator().check_token(user, token):
                 messages.error(request, "Password reset link is invalid. Please request a new one!")
-                return render(request, "authentication/request-reset-email.html")
+                return render(request, "Auth/request-reset-email.html")
 
         except DjangoUnicodeDecodeError as identifier:
             messages.error(request, "Invalid link!")
-            return render(request, "authentication/request-reset-email.html")
+            return render(request, "Auth/request-reset-email.html")
 
-        return render(request, "authentication/set-new-password.html", context)
+        return render(request, "Auth/set-new-password.html", context)
 
     def post(self, request, uidb64, token):
         context = {"uidb64": uidb64, "token": token, "has_error": False}
@@ -241,7 +239,7 @@ class SetNewPasswordView(View):
             context["has_error"] = True
 
         if context["has_error"] == True:
-            return render(request, "authentication/set-new-password.html", context)
+            return render(request, "Auth/set-new-password.html", context)
 
         try:
             user_id = force_str(urlsafe_base64_decode(uidb64))
@@ -256,4 +254,4 @@ class SetNewPasswordView(View):
 
         except DjangoUnicodeDecodeError as identifier:
             messages.error(request, "Something went wrong!")
-            return render(request, "authentication/set-new-password.html", context)
+            return render(request, "Auth/set-new-password.html", context)
