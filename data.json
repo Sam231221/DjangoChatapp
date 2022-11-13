@@ -1,11 +1,149 @@
 [
 {
-    "model": "MChat.thread",
+    "model": "MAuthentication.user",
     "pk": 1,
     "fields": {
-        "first_person": 1,
-        "second_person": 2,
-        "timestamp": "2022-09-19T02:54:39.695Z"
+        "password": "pbkdf2_sha256$320000$WmMkosDatx04lBdZAwY9mC$E4XLIaOH5rGUCVAmG3gAgTTWFVRI73qXTy5X6JFthrw=",
+        "last_login": "2022-11-11T13:42:50.979Z",
+        "is_superuser": true,
+        "username": "Sam",
+        "first_name": "Sameer",
+        "last_name": "Shahi",
+        "email": "samirshahi9882@gmail.com",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2022-11-10T11:43:47Z",
+        "image": "userprofiles/1661409509875.jpg",
+        "is_email_verified": true,
+        "address": "Machhapuchre Tole-3",
+        "mobile": "9867743856",
+        "created": "2022-11-10T11:43:47.816Z",
+        "updated": "2022-11-10T12:05:00.106Z",
+        "bio": "I am a Software Developer with 4 years of Experience",
+        "location": "Pokhara",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "MAuthentication.user",
+    "pk": 2,
+    "fields": {
+        "password": "pbkdf2_sha256$320000$vd3wuTsRu7z7TkahUgvxca$rTuH97Z+wSv1vLw+WLdeHysgP3ZPemZSyol+cyMYY60=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "Sangam",
+        "first_name": "",
+        "last_name": "",
+        "email": "sangam123@gmail.com",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2022-11-10T12:08:24Z",
+        "image": "images/profile.png",
+        "is_email_verified": true,
+        "address": null,
+        "mobile": null,
+        "created": "2022-11-10T12:08:24.525Z",
+        "updated": "2022-11-10T12:09:36.972Z",
+        "bio": "Flutter Developer",
+        "location": "",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "MAuthentication.user",
+    "pk": 3,
+    "fields": {
+        "password": "pbkdf2_sha256$320000$YS07fV6Igu0BjL2Rh67dY0$xapya5kRuMDqii9RNsylM0d+Us9b4osbXzdUh+7aUKQ=",
+        "last_login": "2022-11-10T14:45:58.987Z",
+        "is_superuser": false,
+        "username": "Ram",
+        "first_name": "",
+        "last_name": "",
+        "email": "ram123@gmail.com",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2022-11-10T12:08:46Z",
+        "image": "userprofiles/ram.jpg",
+        "is_email_verified": true,
+        "address": null,
+        "mobile": null,
+        "created": "2022-11-10T12:08:46.862Z",
+        "updated": "2022-11-10T14:45:32.975Z",
+        "bio": "",
+        "location": "",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "MAuthentication.user",
+    "pk": 4,
+    "fields": {
+        "password": "pbkdf2_sha256$320000$PCNmPh3DlklOl9xUAnjeb3$yVqu002PKtjIQNL4ET3qHEa2gsv6H4ES7brFBM++w+o=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "Bishal",
+        "first_name": "",
+        "last_name": "",
+        "email": "bishal123@gmail.com",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2022-11-10T13:29:53Z",
+        "image": "userprofiles/bishal.jpg",
+        "is_email_verified": true,
+        "address": null,
+        "mobile": null,
+        "created": "2022-11-10T13:29:53.143Z",
+        "updated": "2022-11-10T14:57:53.633Z",
+        "bio": "",
+        "location": "",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "MCore.post",
+    "pk": 1,
+    "fields": {
+        "user": 3,
+        "image": "post_images/CAME-TV-Dolly.jpg",
+        "caption": "Canon ES 15000D videoshoot at Los Angeles.",
+        "created_at": "2022-11-10T12:06:12Z",
+        "no_of_likes": 1
+    }
+},
+{
+    "model": "MCore.likepost",
+    "pk": 1,
+    "fields": {
+        "post_id": "1",
+        "username": "Sam"
+    }
+},
+{
+    "model": "MCore.followerscount",
+    "pk": 2,
+    "fields": {
+        "follower": "Sam",
+        "user": "Ram"
+    }
+},
+{
+    "model": "MCore.followerscount",
+    "pk": 4,
+    "fields": {
+        "follower": "Sam",
+        "user": "Bishal"
+    }
+},
+{
+    "model": "MCore.followerscount",
+    "pk": 5,
+    "fields": {
+        "follower": "Sam",
+        "user": "Sangam"
     }
 },
 {
@@ -14,407 +152,58 @@
     "fields": {
         "first_person": 1,
         "second_person": 3,
-        "timestamp": "2022-09-19T02:55:34.332Z"
+        "timestamp": "2022-11-10T14:32:55.253Z"
     }
 },
 {
     "model": "MChat.thread",
-    "pk": 3,
-    "fields": {
-        "first_person": 2,
-        "second_person": 1,
-        "timestamp": "2022-09-19T03:55:00.953Z"
-    }
-},
-{
-    "model": "MChat.chatmessage",
-    "pk": 1,
-    "fields": {
-        "thread": 1,
-        "user": 1,
-        "message": "hello",
-        "timestamp": "2022-09-19T02:59:06.864Z",
-        "posted_on": "2022-09-19T04:14:10.713Z"
-    }
-},
-{
-    "model": "MChat.chatmessage",
-    "pk": 2,
-    "fields": {
-        "thread": 1,
-        "user": 1,
-        "message": "k gardai xau?",
-        "timestamp": "2022-09-19T03:02:02.088Z",
-        "posted_on": "2022-09-19T04:14:10.713Z"
-    }
-},
-{
-    "model": "MChat.chatmessage",
-    "pk": 3,
-    "fields": {
-        "thread": 1,
-        "user": 1,
-        "message": "kina naboleko",
-        "timestamp": "2022-09-19T03:08:06.136Z",
-        "posted_on": "2022-09-19T04:14:10.713Z"
-    }
-},
-{
-    "model": "MChat.chatmessage",
     "pk": 4,
     "fields": {
-        "thread": 1,
-        "user": 1,
-        "message": "khana khayau?",
-        "timestamp": "2022-09-19T03:08:34.414Z",
-        "posted_on": "2022-09-19T04:14:10.713Z"
+        "first_person": 1,
+        "second_person": 4,
+        "timestamp": "2022-11-11T12:50:20.634Z"
     }
 },
 {
-    "model": "MChat.chatmessage",
+    "model": "MChat.thread",
     "pk": 5,
     "fields": {
-        "thread": 2,
-        "user": 1,
-        "message": "lol",
-        "timestamp": "2022-09-19T03:31:16.790Z",
-        "posted_on": "2022-09-19T04:14:10.713Z"
+        "first_person": 1,
+        "second_person": 2,
+        "timestamp": "2022-11-11T13:50:53.457Z"
     }
 },
 {
     "model": "MChat.chatmessage",
-    "pk": 6,
-    "fields": {
-        "thread": 3,
-        "user": 1,
-        "message": "ssdfs",
-        "timestamp": "2022-09-19T03:55:09.780Z",
-        "posted_on": "2022-09-19T04:14:10.713Z"
-    }
-},
-{
-    "model": "MChat.chatmessage",
-    "pk": 7,
-    "fields": {
-        "thread": 3,
-        "user": 1,
-        "message": "huh",
-        "timestamp": "2022-09-19T03:55:16.861Z",
-        "posted_on": "2022-09-19T04:14:10.713Z"
-    }
-},
-{
-    "model": "MChat.chatmessage",
-    "pk": 8,
-    "fields": {
-        "thread": 3,
-        "user": 1,
-        "message": "k gradai xau",
-        "timestamp": "2022-09-19T03:56:29.120Z",
-        "posted_on": "2022-09-19T04:14:10.713Z"
-    }
-},
-{
-    "model": "MChat.chatmessage",
-    "pk": 9,
-    "fields": {
-        "thread": 2,
-        "user": 1,
-        "message": "kaam garexa",
-        "timestamp": "2022-09-19T04:01:55.779Z",
-        "posted_on": "2022-09-19T04:14:10.713Z"
-    }
-},
-{
-    "model": "MChat.chatmessage",
-    "pk": 10,
-    "fields": {
-        "thread": 2,
-        "user": 1,
-        "message": "umm",
-        "timestamp": "2022-09-19T04:15:49.068Z",
-        "posted_on": "2022-09-19T04:15:49.067Z"
-    }
-},
-{
-    "model": "MChat.chatmessage",
-    "pk": 11,
-    "fields": {
-        "thread": 1,
-        "user": 1,
-        "message": "kasto lamo jasto",
-        "timestamp": "2022-09-19T04:17:07.584Z",
-        "posted_on": "2022-09-19T04:17:07.583Z"
-    }
-},
-{
-    "model": "MChat.chatmessage",
-    "pk": 12,
-    "fields": {
-        "thread": 2,
-        "user": 1,
-        "message": "hello ",
-        "timestamp": "2022-09-19T04:21:03.732Z",
-        "posted_on": "2022-09-19T04:21:03.731Z"
-    }
-},
-{
-    "model": "MChat.chatmessage",
-    "pk": 13,
-    "fields": {
-        "thread": 1,
-        "user": 1,
-        "message": "aba ta milxa",
-        "timestamp": "2022-09-19T04:55:46.200Z",
-        "posted_on": "2022-09-19T04:55:46.200Z"
-    }
-},
-{
-    "model": "MChat.chatmessage",
-    "pk": 14,
-    "fields": {
-        "thread": 2,
-        "user": 1,
-        "message": "kam garyo",
-        "timestamp": "2022-09-19T05:00:38.015Z",
-        "posted_on": "2022-09-19T05:00:38.015Z"
-    }
-},
-{
-    "model": "MChat.chatmessage",
-    "pk": 15,
-    "fields": {
-        "thread": 1,
-        "user": 1,
-        "message": "milyo",
-        "timestamp": "2022-09-19T05:03:49.219Z",
-        "posted_on": "2022-09-19T05:03:49.218Z"
-    }
-},
-{
-    "model": "MChat.chatmessage",
-    "pk": 16,
-    "fields": {
-        "thread": 1,
-        "user": 1,
-        "message": "milyo",
-        "timestamp": "2022-09-19T05:03:58.893Z",
-        "posted_on": "2022-09-19T05:03:58.892Z"
-    }
-},
-{
-    "model": "MChat.chatmessage",
-    "pk": 17,
-    "fields": {
-        "thread": 1,
-        "user": 1,
-        "message": "yess",
-        "timestamp": "2022-09-19T05:04:12.163Z",
-        "posted_on": "2022-09-19T05:04:12.162Z"
-    }
-},
-{
-    "model": "MChat.chatmessage",
-    "pk": 18,
-    "fields": {
-        "thread": 1,
-        "user": 1,
-        "message": "arko test",
-        "timestamp": "2022-09-19T05:11:14.954Z",
-        "posted_on": "2022-09-19T05:11:14.953Z"
-    }
-},
-{
-    "model": "MChat.chatmessage",
-    "pk": 19,
-    "fields": {
-        "thread": 1,
-        "user": 1,
-        "message": "string ho",
-        "timestamp": "2022-09-19T05:12:14.386Z",
-        "posted_on": "2022-09-19T05:12:14.385Z"
-    }
-},
-{
-    "model": "MChat.chatmessage",
-    "pk": 20,
-    "fields": {
-        "thread": 1,
-        "user": 1,
-        "message": "moment",
-        "timestamp": "2022-09-19T05:13:14.687Z",
-        "posted_on": "2022-09-19T05:13:14.687Z"
-    }
-},
-{
-    "model": "MChat.chatmessage",
-    "pk": 21,
-    "fields": {
-        "thread": 1,
-        "user": 1,
-        "message": "aba ",
-        "timestamp": "2022-09-19T05:14:26.044Z",
-        "posted_on": "2022-09-19T05:14:26.043Z"
-    }
-},
-{
-    "model": "MChat.chatmessage",
-    "pk": 22,
-    "fields": {
-        "thread": 1,
-        "user": 1,
-        "message": "kamina",
-        "timestamp": "2022-09-19T05:16:09.561Z",
-        "posted_on": "2022-09-19T05:16:09.560Z"
-    }
-},
-{
-    "model": "MChat.chatmessage",
-    "pk": 23,
-    "fields": {
-        "thread": 1,
-        "user": 1,
-        "message": "aba kam garxa",
-        "timestamp": "2022-09-19T05:17:33.652Z",
-        "posted_on": "2022-09-19T05:17:33.650Z"
-    }
-},
-{
-    "model": "MChat.chatmessage",
-    "pk": 24,
-    "fields": {
-        "thread": 1,
-        "user": 1,
-        "message": "aba kam garxa",
-        "timestamp": "2022-09-19T05:18:16.828Z",
-        "posted_on": "2022-09-19T05:18:16.827Z"
-    }
-},
-{
-    "model": "MChat.chatmessage",
-    "pk": 25,
-    "fields": {
-        "thread": 1,
-        "user": 1,
-        "message": "machikini",
-        "timestamp": "2022-09-19T05:19:03.057Z",
-        "posted_on": "2022-09-19T05:19:03.056Z"
-    }
-},
-{
-    "model": "MChat.chatmessage",
-    "pk": 26,
-    "fields": {
-        "thread": 1,
-        "user": 1,
-        "message": "kamm garexa",
-        "timestamp": "2022-09-19T05:22:58.461Z",
-        "posted_on": "2022-09-19T05:22:58.460Z"
-    }
-},
-{
-    "model": "MChat.chatmessage",
-    "pk": 27,
-    "fields": {
-        "thread": 1,
-        "user": 1,
-        "message": "hora",
-        "timestamp": "2022-09-19T05:23:07.067Z",
-        "posted_on": "2022-09-19T05:23:07.066Z"
-    }
-},
-{
-    "model": "MChat.chatmessage",
-    "pk": 28,
-    "fields": {
-        "thread": 1,
-        "user": 1,
-        "message": "umm",
-        "timestamp": "2022-09-19T05:23:55.998Z",
-        "posted_on": "2022-09-19T05:23:55.997Z"
-    }
-},
-{
-    "model": "MChat.chatmessage",
-    "pk": 29,
-    "fields": {
-        "thread": 1,
-        "user": 1,
-        "message": "uu",
-        "timestamp": "2022-09-19T05:24:01.640Z",
-        "posted_on": "2022-09-19T05:24:01.640Z"
-    }
-},
-{
-    "model": "MAuthentication.user",
     "pk": 1,
     "fields": {
-        "password": "pbkdf2_sha256$390000$ruROKSIgzjpeojbeyAuup0$j+jAVIdNvbLoFZHeT2LDN0EW4cmOcqc42sVAXfZr5G0=",
-        "last_login": "2022-10-26T15:20:29.719Z",
-        "is_superuser": true,
-        "username": "Sam",
-        "first_name": "",
-        "last_name": "",
-        "email": "samirshahi9882@gmail.com",
-        "is_staff": true,
-        "is_active": true,
-        "date_joined": "2022-09-19T02:25:51Z",
-        "image": "userprofiles/1654786761779.jpg",
-        "is_email_verified": false,
-        "address": null,
-        "mobile": null,
-        "created": "2022-09-19T02:25:52.177Z",
-        "updated": "2022-09-19T02:55:59.672Z",
-        "groups": [],
-        "user_permissions": []
+        "thread": 2,
+        "user": 1,
+        "message": "hello ram",
+        "timestamp": "2022-11-10T14:44:13.553Z",
+        "posted_on": "2022-11-10T14:44:13.553Z"
     }
 },
 {
-    "model": "MAuthentication.user",
+    "model": "MChat.chatmessage",
     "pk": 2,
     "fields": {
-        "password": "pbkdf2_sha256$390000$S2E4EyNufJ5LwsOmmP9kh2$+HBHIC195MSM48nwi5grVEztWNVCZAKlfiWw/zPC0EE=",
-        "last_login": "2022-09-19T02:26:42.899Z",
-        "is_superuser": true,
-        "username": "Ram",
-        "first_name": "",
-        "last_name": "",
-        "email": "ram123@gmail.com",
-        "is_staff": true,
-        "is_active": true,
-        "date_joined": "2022-09-19T02:26:09.434Z",
-        "image": "images/profile.png",
-        "is_email_verified": false,
-        "address": null,
-        "mobile": null,
-        "created": "2022-09-19T02:26:09.733Z",
-        "updated": "2022-09-19T02:26:09.733Z",
-        "groups": [],
-        "user_permissions": []
+        "thread": 2,
+        "user": 1,
+        "message": "k gardai xau?",
+        "timestamp": "2022-11-10T14:44:21.209Z",
+        "posted_on": "2022-11-10T14:44:21.208Z"
     }
 },
 {
-    "model": "MAuthentication.user",
+    "model": "MChat.chatmessage",
     "pk": 3,
     "fields": {
-        "password": "pbkdf2_sha256$390000$hve235QjbhAdAEPlUJvmEn$49nrXjByp7Yp9vH05cth7VI7dUaqkZ2/KN4px9TLnLA=",
-        "last_login": null,
-        "is_superuser": true,
-        "username": "Bishal",
-        "first_name": "",
-        "last_name": "",
-        "email": "bishal123@gmail.com",
-        "is_staff": true,
-        "is_active": true,
-        "date_joined": "2022-09-19T02:31:40Z",
-        "image": "userprofiles/bishalbhujel.jpg",
-        "is_email_verified": false,
-        "address": null,
-        "mobile": null,
-        "created": "2022-09-19T02:31:40.323Z",
-        "updated": "2022-09-19T02:55:17.552Z",
-        "groups": [],
-        "user_permissions": []
+        "thread": 5,
+        "user": 1,
+        "message": "hello sangam",
+        "timestamp": "2022-11-11T13:56:40.246Z",
+        "posted_on": "2022-11-11T13:56:40.245Z"
     }
 }
 ]
