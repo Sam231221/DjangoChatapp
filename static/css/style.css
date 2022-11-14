@@ -24,7 +24,9 @@ a:hover{
     text-decoration: none;
 }
 
-
+.logo span strong{
+    font-size: 20px;
+}
 .container{
     position: relative;
 }
